@@ -1,0 +1,6 @@
+{
+    "dart.flutterSdkPath": "/Users/feimy/flutter_sdk/flutter_ohos/bin",
+    "dart.env": {
+        "PUB_CACHE": "/Users/feimy/ohflutter_cache"
+    },
+}

@@ -1,0 +1,24 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "Flycam"
+    },
+    {
+      "name": "blue_tooth_reason",
+      "value": "用于查找附近的蓝牙设备，进行配网和连接等功能"
+    },
+    {
+      "name": "read_pasteboard_reason",
+      "value": "Used for reading passwords from the clipboard, accepting device sharing and home sharing passwords, and other functions"
+    }
+  ]
+}

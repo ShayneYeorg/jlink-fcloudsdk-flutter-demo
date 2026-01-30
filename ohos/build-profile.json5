@@ -1,0 +1,55 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "/Users/feimy/.ohos/config/default_ohos_UfN7H7T83jxDA-0K3ABllcdo9OQ0jJagXza5VkqDZBU=.cer",
+          "storePassword": "0000001BD36C01641A0FABF796FD23EB5F02CD6077C8BD3242820CAA8931A6E202A2F43EA7A597D91B64E5",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B2016A57460742ADE8790FAF5E88CD7A06CE6B63DA0051EF0D1CEF4565D8740FD5E2712EC2B1EA3",
+          "profile": "/Users/feimy/.ohos/config/default_ohos_UfN7H7T83jxDA-0K3ABllcdo9OQ0jJagXza5VkqDZBU=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "/Users/feimy/.ohos/config/default_ohos_UfN7H7T83jxDA-0K3ABllcdo9OQ0jJagXza5VkqDZBU=.p12"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "compatibleSdkVersion": "5.0.1(13)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug"
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}

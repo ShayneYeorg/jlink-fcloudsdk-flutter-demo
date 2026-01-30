@@ -1,0 +1,114 @@
+import 'package:flutter/material.dart';
+import 'package:xcloudsdk_flutter_example/generated/l10n.dart';
+import 'package:xcloudsdk_flutter_example/pages/device_ability/device_ability_manager.dart';
+import 'package:xcloudsdk_flutter_example/pages/device_pwd_setting/device_pwd_reset_page.dart';
+import 'package:xcloudsdk_flutter_example/pages/device_setting/device_alarm_page.dart';
+import 'package:xcloudsdk_flutter_example/pages/device_setting/device_basic_page.dart';
+import 'package:xcloudsdk_flutter_example/pages/device_setting/device_info_page.dart';
+import 'package:xcloudsdk_flutter_example/pages/device_setting/device_record_set_page.dart';
+import 'package:xcloudsdk_flutter_example/pages/device_setting/device_storage_manage_page.dart';
+
+typedef GetTitle = String Function(BuildContext context);
+
+// ignore: must_be_immutable
+class DeviceConfigPage extends StatefulWidget {
+  DeviceConfigPage({Key? key, required this.deviceId, required this.channel})
+      : super(key: key);
+
+  final String deviceId;
+  final int channel;
+
+  List<GetTitle> dataSource = [
+    (context) => TR.current.basicSetting,
+    (context) => TR.current.resetDevPwd,
+    (context) => TR.current.storageManagement,
+    (context) => TR.current.recordSetting,
+    (context) => TR.current.alarm,
+    (context) => TR.current.devInfo,
+  ];
+
+  @override
+  State<DeviceConfigPage> createState() => _DeviceConfigPageState();
+}
+
+class _DeviceConfigPageState extends State<DeviceConfigPage> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _updateDeviceSystemFunction();
+  }
+
+  _updateDeviceSystemFunction() async {
+    await DeviceAbilityManager.update(deviceId: widget.deviceId);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(TR.current.setting),
+        centerTitle: true,
+      ),
+      body: ListView.separated(
+          itemBuilder: (BuildContext context, int index) {
+            return ListTile(
+              leading: const Icon(Icons.message),
+              title: Text(widget.dataSource[index](context)),
+              onTap: () {
+                clickRespond(context, widget.dataSource[index](context));
+              },
+            );
+          },
+          separatorBuilder: (BuildContext context, int index) {
+            return const Divider(
+              color: Colors.grey,
+            );
+          },
+          itemCount: widget.dataSource.length),
+    );
+  }
+
+  void clickRespond(BuildContext context, String title) {
+    if (title == "报警" || title == "alarm") {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (BuildContext context) {
+        return DeviceAlarmPage(
+            deviceId: widget.deviceId, channel: widget.channel);
+      }));
+    } else if (title == "设备信息" || title == "device info") {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (BuildContext context) {
+        return DeviceInfoPage(
+            deviceId: widget.deviceId, channel: widget.channel);
+      }));
+    } else if (title == "重置设备密码" || title == "reset device password") {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (BuildContext context) {
+        return DevicePwdResetPage(
+          deviceId: widget.deviceId,
+        );
+      }));
+    } else if (title == "存储管理" || title == "storage management") {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (BuildContext context) {
+        return DeviceStoragePage(
+            deviceId: widget.deviceId, channel: widget.channel);
+      }));
+    } else if (title == "录像设置" || title == "Video recording settings") {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (BuildContext context) {
+        return DeviceRecordSetPage(
+            deviceId: widget.deviceId, channel: widget.channel);
+      }));
+    } else if (title == "基本设置" || title == "Basic Settings") {
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (BuildContext context) {
+        return DeviceBasicPage(
+            deviceId: widget.deviceId, channel: widget.channel);
+      }));
+    }
+  }
+
+  _DeviceConfigPageState();
+}

@@ -60,7 +60,7 @@ class _InputInfoWidgetState extends State<InputInfoWidget> {
                   child: const Text("登录设备")),
               ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.grey),
+                    backgroundColor: WidgetStateProperty.all(Colors.grey),
                   ),
                   onPressed: () {
                     Navigator.pop(context);

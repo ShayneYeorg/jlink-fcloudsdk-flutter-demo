@@ -22,7 +22,7 @@ dependencies:
 
   # xcloudsdk_flutter:
   #   path: ../xcloudsdk_flutter
-  xcloudsdk_flutter: ^2.0.0
+  xcloudsdk_flutter: ^0.0.5
   flutter_localizations:
     sdk: flutter
 
@@ -68,9 +68,6 @@ dependencies:
   #网络日志打印
   pretty_dio_logger:
   dio: 5.3.3
-  share_plus: ^7.0.0
-  device_info_plus: ^9.0.0
-  archive: ^3.3.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -133,6 +130,3 @@ flutter_intl:
   main_locale: zh
   arb_dir: lib/l10n
   class_name: TR
-
-dependency_overrides:
-  collection: 1.19.1

@@ -92,7 +92,7 @@ class UploadLogUtil {
     }
 
     final zipFile = File(targetPath);
-    final zipData = ZipEncoder().encode(archive);
+    final zipData = ZipEncoder().encode(archive)!;
 
     await zipFile.writeAsBytes(zipData);
 

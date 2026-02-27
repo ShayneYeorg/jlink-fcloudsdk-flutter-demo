@@ -6,7 +6,6 @@ import 'package:go_router/go_router.dart';
 import 'package:xcloudsdk_flutter/api/api_center.dart';
 import 'package:xcloudsdk_flutter_example/common/code_prase.dart';
 import 'package:xcloudsdk_flutter_example/generated/l10n.dart';
-import 'package:xcloudsdk_flutter_example/pages/device_ability/device_ability_manager.dart';
 import 'package:xcloudsdk_flutter_example/pages/device_setting/views/common_item_list.dart';
 import 'package:xcloudsdk_flutter_example/views/toast/toast.dart';
 

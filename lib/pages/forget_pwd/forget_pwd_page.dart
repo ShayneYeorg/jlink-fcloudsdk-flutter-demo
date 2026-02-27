@@ -133,7 +133,7 @@ class _ForgetPwdPageState extends State<ForgetPwdPage> {
                         },
                         style: const ButtonStyle(
                             backgroundColor:
-                                MaterialStatePropertyAll(Colors.blue)),
+                                WidgetStatePropertyAll(Colors.blue)),
                         child: Text(
                           TR.current.getCode,
                           style: const TextStyle(color: Colors.white),

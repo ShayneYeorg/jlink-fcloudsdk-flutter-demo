@@ -132,9 +132,7 @@ class _DevPresetViewState extends State<DevPresetView> {
                                       Radius.circular(16)),
                                   border: Border.all(
                                       color: Colors.grey.withOpacity(0.5))),
-                              child: preset == null
-                                  ? const Icon(Icons.add_rounded)
-                                  : Stack(
+                              child: Stack(
                                       alignment: Alignment.topRight,
                                       children: [
                                         ClipRRect(

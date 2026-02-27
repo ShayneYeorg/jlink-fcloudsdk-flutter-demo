@@ -200,7 +200,7 @@ class _RegisterWithPhonePageState extends State<RegisterWithPhonePage> {
                           child: TextButton(
                             style: const ButtonStyle(
                                 backgroundColor:
-                                    MaterialStatePropertyAll(Colors.blue)),
+                                    WidgetStatePropertyAll(Colors.blue)),
                             onPressed: () {
                               _onSendCode();
                             },

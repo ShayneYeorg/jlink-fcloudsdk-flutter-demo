@@ -50,7 +50,7 @@ class _EditTextDialogState extends State<EditTextDialog> {
                     child: const Text("确定")),
                 ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.grey),
+                      backgroundColor: WidgetStateProperty.all(Colors.grey),
                     ),
                     onPressed: () {
                       Navigator.pop(context);
